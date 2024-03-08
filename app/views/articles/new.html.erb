@@ -1,7 +1,11 @@
     <%= turbo_frame_tag "slide-over" do %>
     <div aria-labelledby="slide-over-title" role="dialog" aria-modal="true"
       data-controller="slide-over remove"
-      data-remove-target="element" >
+      data-slide-over-target="slideOver"
+      data-remove-target="element"
+      class="fixed inset-0 z-50 overflow-hidden"
+      data-action="click->slide-over#slideOut keyup@window->slide-over#closeOnEscape"
+      data-slide-over-hidden="true">
 
       <div class="backdrop animate-fade-in"></div>
 
@@ -16,8 +20,7 @@
                   <div class="flex items-start justify-between">
                     <h2 class="text-base font-semibold leading-6 text-gray-900" id="slide-over-title">create a new article</h2>
                     <div class="flex items-center ml-3 h-7">
-                      <button type="button" class="relative text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                        data-action="remove#remove slide-over#slideOut">
+                      <button type="button" data-action="remove#remove slide-over#slideOut" class="relative text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         <span class="absolute -inset-2.5"></span>
                         <span class="sr-only">Close panel</span>
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -29,17 +32,7 @@
                 </div>
 
                 <section>
-                  <%= form_with model: @article do |f| %>
-                    <p>
-                      <%= f.label :title %><br />
-                      <%= f.text_field :title %>
-          
-                      <%= f.label :body %> <br />
-                      <%= f.text_area :body %>
-                    
-                      <%= f.submit "create article" %>
-                    </p>
-                  <% end %>
+                  <%= render "form", article: @article %>
                 </section>
               </div>
             </div>
