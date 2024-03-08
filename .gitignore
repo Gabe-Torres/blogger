@@ -31,3 +31,5 @@
 /config/master.key
 
 active_designer/index.html
+
+/node_modules/
