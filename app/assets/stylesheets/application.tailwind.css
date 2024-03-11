@@ -64,3 +64,21 @@ fieldset header {
 #slide-over .backdrop {
   @apply fixed inset-0 bg-black bg-opacity-50;
 }
+
+/* Ensure the direct parent or a close ancestor of the slide-over div has a position context set */
+.parent-or-ancestor {
+  position: relative; /* or 'absolute', 'fixed', depending on your layout needs */
+}
+
+.slide-over {
+  z-index: 50; /* Adjust as necessary to be above other content */
+}
+
+.slide-over {
+  transform: translateX(100%);
+}
+
+/* Active state, slides in from the right */
+.slide-over-active {
+  transform: translateX(0);
+}

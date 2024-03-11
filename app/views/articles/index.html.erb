@@ -6,9 +6,7 @@
 
   <div class="flex items-center justify-between">
     <h1 class="text-4xl font-bold">All Articles</h1>
-    <%= link_to "Create a New Article", new_article_path,
-      class: "btn btn-primary",
-      data: {turbo_frame: "slide-over"} %>
+    <%= link_to "New Article", new_article_path, class: "btn btn-primary", data: {turbo_frame: "slide-over"} %>
   </div>
 
   <div id="articles" class="min-w-full">
