@@ -17,6 +17,8 @@ RSpec.describe 'user creates new article', type: :feature do
 
         expect(page).to have_content('new title')
         expect(page).to have_content('new body')
+        expect(page).to have_content('Article created!')
+
       end
     end
   end
