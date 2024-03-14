@@ -17,6 +17,7 @@ RSpec.describe 'user edits one article', type: :feature do
 
       expect(page).to have_content('different')
       expect(page).to_not have_content('new body')
+      expect(page).to have_content("Article '#{article.title}' updated!")
     end
   end
 end
