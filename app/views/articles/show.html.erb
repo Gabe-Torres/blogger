@@ -3,4 +3,5 @@
 <%= link_to "<< Back to Articles List",articles_path, class: "btn btn-primary" %>
 
 <%= link_to "Delete", article_path(@article), method: :delete, class: "btn btn-primary", data: { "turbo-method": :delete, turbo_confirm: "Are you sure you want to delete #{@article.title}"} %>
-
+<%= link_to "Edit", edit_article_path(@article), method: :get, class: "btn btn-primary", data: { "turbo-frame": "slide-over" } %>
+<%= turbo_frame_tag "slide-over" %>

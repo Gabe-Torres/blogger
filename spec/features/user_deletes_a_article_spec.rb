@@ -11,8 +11,10 @@ RSpec.describe "user deletes a article", type: :feature do
       click_link "Delete"
 
       expect(current_path).to eq(articles_path)
+
       expect(page).to_not have_content(article1.title)
       expect(page).to have_content(article2.title)
+      expect(page).to have_content("Article deleted!")
     end
   end
 end
