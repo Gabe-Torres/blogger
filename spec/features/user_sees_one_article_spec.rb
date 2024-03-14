@@ -19,4 +19,21 @@ RSpec.describe "user sees one article", type: :feature do
       expect(page).to have_content(comment2.body)
     end
   end
+
+  describe 'they  fill in a comment form' do
+    it 'displays the comment on the article show' do 
+      article = Article.create!(title: "New title", body: "new body")
+
+      visit article_path(article)
+
+      fill_in "Author Name", with: "bruuuuu"
+      fill_in 'Body', with: 'yesssssiiiiiirrrr'
+      click_on 'Submit'
+
+      expect(current_path).to eq(article_path(article))
+      expect(page).to have_content("Post a Comment")
+      expect(page).to have_content("bruuuuu")
+      expect(page).to have_content("yesssssiiiiiirrrr")
+    end
+  end
 end
