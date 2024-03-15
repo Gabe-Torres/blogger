@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   describe 'Associations' do
-    # it { should have_many... belong_to :example }
+    it {should have_many(:comments)}
   end
 
   describe 'Validations' do
