@@ -26,14 +26,15 @@ RSpec.describe "user sees one article", type: :feature do
 
       visit article_path(article)
 
-      fill_in "Author Name", with: "bruuuuu"
-      fill_in 'Body', with: 'yesssssiiiiiirrrr'
+      fill_in "comment[author_name]", with: "bruuuuu"
+      fill_in 'comment[body]', with: 'yesssssiiiiiirrrr'
       click_on 'Submit'
 
       expect(current_path).to eq(article_path(article))
       expect(page).to have_content("Post a Comment")
       expect(page).to have_content("bruuuuu")
       expect(page).to have_content("yesssssiiiiiirrrr")
+      expect(page).to have_content("Comments (1)")
     end
   end
 end

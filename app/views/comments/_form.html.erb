@@ -1,15 +1,15 @@
-<h3>Post a Comment</h3>
+<div class="max-w-md mx-auto bg-white rounded-lg border border-gray-200 shadow-md p-6">
+  <h3 class="text-lg font-semibold mb-4">Post a Comment</h3>
 
-<%= form_for [ @article, @comment ] do |f| %>
-  <p>
-    <%= f.label :author_name %><br/>
-    <%= f.text_field :author_name %>
-  </p>
-  <p>
-    <%= f.label :body %><br/>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit 'Submit' %>
-  </p>
-<% end %>
+  <%= form_with(model: [@article, @comment], data: { turbo_frame: "comment_form" }) do |f| %>
+    <div class="mb-4">
+      <%= f.text_field :author_name, placeholder: "Your Name", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+    </div>
+    <div class="mb-4">
+      <%= f.text_area :body, placeholder: "Your Comment", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", rows: 4 %>
+    </div>
+    <div>
+      <%= f.submit 'Submit', class: "text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" %>
+    </div>
+  <% end %>
+</div>
