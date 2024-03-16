@@ -7,7 +7,7 @@ RSpec.describe Tag, type: :model do
   end
 
   describe 'Validations' do
-    # it { should validate_presence_of :example }
+    it { should validate_presence_of :name }
   end
 
   describe 'Instance Methods' do
