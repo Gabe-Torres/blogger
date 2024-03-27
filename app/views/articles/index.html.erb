@@ -11,12 +11,17 @@
 
   <div id="articles" class="min-w-full">
     <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article_path(article),
-      class: 'article-title', id: "article-#{article.id}" %>
-    </li>
+      <li>
+        <%= link_to article.title, article_path(article),
+        class: 'article-title', id: "article-#{article.id}" %>
+      </li>
     <% end %>
+    </div>
+  </div><br ><br >
+
+  <div class="flex items-center justify-between">
+    <h1 class="text-4xl font-bold">All Tags</h1>
+    <%= link_to "All Tags", tags_path, class: "btn btn-primary" %>
   </div>
-</div>
 
 <%= turbo_frame_tag "slide-over" %>

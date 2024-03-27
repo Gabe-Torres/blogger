@@ -1,0 +1,19 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="inline-block px-3 py-2 mb-5 font-medium text-green-500 rounded-lg bg-green-50" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex items-center justify-between">
+    <h1 class="text-4xl font-bold">All Tags</h1>
+  </div>
+
+  <div id="articles" class="min-w-full">
+    <% @tags.each do |tag| %>
+      <li>
+        <%= tag.name %>
+      </li>
+    <% end %>
+    </div>
+  </div><br ><br >
+
+  <%= link_to "<< Back to Articles List",articles_path, class: "btn btn-primary" %>
