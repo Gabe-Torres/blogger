@@ -2,7 +2,10 @@ class Article < ApplicationRecord
   has_many :taggings
   has_many :tags, through: :taggings
   has_many :comments, dependent: :destroy
-  has_many_attached :images
+  has_many_attached :images do |attachable|
+    attachable.variant :thumb, resize_to_limit:
+    [100,100]
+  end
 
   validates_presence_of :title,
                         :body
