@@ -6,6 +6,18 @@
     <% end %>
 </p>
 <p><%= @article.body %></p>
+
+<h3>Images</h3>
+<% @article.images.each do |image| %>
+  <% if image.variable? %>
+    <%= image_tag url_for(image.variant(resize_to_limit: [100, 100])) %>
+      <% else %>
+      <%= link_to rails_blob_path(image, disposition: 'attachment') do %>
+        <%= image_tag 'placeholder.png', alt: 'download image' %>
+      <% end %>
+    <% end %>
+<% end %>
+
 <h3>Comments (<%= @article.comments.size %>)</h3>
 <%= render partial: 'articles/comment', collection: @article.comments.reverse %>
 <%= render partial: 'comments/form' %>

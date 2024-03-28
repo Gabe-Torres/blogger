@@ -26,5 +26,10 @@
     <%= form.text_field :tag_list %>
   </fieldset>
 
+  <fieldset>
+  <%= form.label :images %>
+  <%= form.file_field :images, multiple: true %>
+  </fieldset>
+
   <%= form.submit data: {turbo_frame: "_top"} %>
 <% end %>
