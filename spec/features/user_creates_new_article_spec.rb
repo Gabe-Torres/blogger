@@ -4,6 +4,9 @@ RSpec.describe 'user creates new article', type: :feature do
   describe 'they link from the article index' do
     describe 'they fill in the form' do
       it 'creates a new article' do
+        user = User.create!(:email => 'test@example.com', :password => 'f4k3p455w0rd')
+        login_as(user, :scope => :user)
+
         visit articles_path
 
         click_link 'New Article'

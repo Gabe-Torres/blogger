@@ -3,9 +3,11 @@ require 'rails_helper'
 RSpec.describe 'user can delete a tag', type: :feature do
   describe 'they visit an article' do
     scenario 'they click a tag and delete it' do
-      article = Article.create!(title: "new", body: "neeeeewwww")
+      user = User.create!(:email => 'test@example.com', :password => 'f4k3p455w0rd')
+      login_as(user, :scope => :user)
+      article = Article.create!(user: user, title: "new", body: "neeeeewwww")
       tag = article.tags.create!(name: "lesssgo")
-      article_2 = Article.create!(title: 'title 2', body: 'body 2')
+      article_2 = Article.create!(user: user, title: 'title 2', body: 'body 2')
       tag_2 = article_2.tags.create!(name: "not go")
 
 
