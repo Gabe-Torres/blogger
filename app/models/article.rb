@@ -7,6 +7,8 @@ class Article < ApplicationRecord
     [100,100]
   end
 
+  belongs_to :user
+
   validates_presence_of :title,
                         :body
 

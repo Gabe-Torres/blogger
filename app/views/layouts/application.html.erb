@@ -16,8 +16,7 @@
     <p class="flash"><%= flash.notice %></p>
     <%= yield %>
       <%= csrf_meta_tags %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
     </main>
+        <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
   </body>
 </html>

@@ -3,8 +3,10 @@ require 'rails_helper'
 RSpec.describe 'user sees all article', type: :feature do
   describe 'they visit /articles' do
     scenario 'displays all articles' do
-      article_1 = Article.create!(title: 'title 1', body: 'body 1')
-      article_2 = Article.create!(title: 'title 2', body: 'body 2')
+      user = User.create!(:email => 'test@example.com', :password => 'f4k3p455w0rd')
+      login_as(user, :scope => :user)
+      article_1 = user.articles.create!(title: 'title 1', body: 'body 1')
+      article_2 = user.articles.create!(title: 'title 2', body: 'body 2')
 
       visit '/articles'
 

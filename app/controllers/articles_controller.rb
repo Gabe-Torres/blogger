@@ -1,8 +1,9 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_article, only: %i[show destroy edit update]
 
   def index
-    @articles = Article.all
+    @articles = current_user.articles
   end
 
   def show
@@ -11,12 +12,15 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @user = current_user
+
     @article = Article.new
   end
 
   def create
-    @article = Article.create!(article_params)
-
+    @article = Article.new(article_params)
+    @article.user_id = current_user.id
+    @article.save
     flash.notice = 'Article created!'
 
     redirect_to article_path(@article)

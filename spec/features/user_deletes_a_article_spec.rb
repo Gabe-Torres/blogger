@@ -3,8 +3,11 @@ require "rails_helper"
 RSpec.describe "user deletes a article", type: :feature do
   describe "they link from the show page" do
     it "displays index of all articles without the deleted article" do
-      article1 = Article.create!(title: "New title", body: "new body")
-      article2 = Article.create!(title: "New", body: "body")
+      user = User.create!(:email => 'test@example.com', :password => 'f4k3p455w0rd')
+      login_as(user, :scope => :user)
+
+      article1 = Article.create!(user: user, title: "New title", body: "new body")
+      article2 = Article.create!(user: user, title: "New", body: "body")
 
       visit article_path(article1)
 
