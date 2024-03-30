@@ -2,7 +2,10 @@
 // import "@hotwired/turbo-rails"
 // import "controllers"
 // import "../stylesheets/application"
-
+import "bootstrap"
 import "@hotwired/turbo-rails"
-import "controllers"
-// import "../stylesheets/application"
+import "./controllers/index"
+import "@popperjs/core"
+import "/stylesheets/application"
+
+

@@ -4,4 +4,7 @@ class ApplicationController < ActionController::Base
   # def welcome
 
   # end
+  def index
+    @show_mobile_menu = true
+  end
 end
