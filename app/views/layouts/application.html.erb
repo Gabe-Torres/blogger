@@ -14,7 +14,9 @@
   </head>
 
   <body style="padding-top: 70px;">    
-  <p class="flash"><%= flash.notice %></p>
+  <% if notice.present? %>
+    <p class="inline-block px-3 py-2 mb-5 font-medium text-green-500 rounded-lg bg-green-50" id="notice"><%= notice %></p>
+  <% end %>
     <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Offcanvas dark navbar</a>
