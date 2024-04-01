@@ -21,8 +21,10 @@
 <h3>Comments (<%= @article.comments.size %>)</h3>
 <%= render partial: 'articles/comment', collection: @article.comments.reverse %>
 <%= render partial: 'comments/form' %>
-<%= link_to "<< Back to Articles List",articles_path, class: "btn btn-primary" %>
 
-<%= link_to "Delete", article_path(@article), method: :delete, class: "btn btn-primary", data: { "turbo-method": :delete, turbo_confirm: "Are you sure you want to delete #{@article.title}"} %>
-<%= link_to "Edit", edit_article_path(@article), method: :get, class: "btn btn-primary", data: { "turbo-frame": "slide-over" } %>
+<%= link_to "Delete", article_path(@article), method: :delete, class: "btn btn-outline-danger", data: { "turbo-method": :delete, turbo_confirm: "Are you sure you want to delete #{@article.title}"} %>
+<%= link_to "Edit", edit_article_path(@article), method: :get, class: "btn btn-outline-info", data: { "turbo-frame": "slide-over" } %>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <%= link_to "<< Back to Articles List",articles_path, class: "btn btn-outline-primary" %>
+</div>
 <%= turbo_frame_tag "slide-over" %>
