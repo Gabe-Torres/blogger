@@ -45,6 +45,11 @@ jobs:
           command: bundle exec rspec
       - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: test_results
+      - run:
+          name: Precompile Assets
+          command: |
+            bundle exec rails assets:precompile
+            cp app/assets/builds/tailwind.css public/assets/tailwind.css
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
 
