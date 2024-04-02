@@ -10,3 +10,4 @@
 //= link bootstrap.js
 //= link @popperjs--core.js
 //= link application.css
+//= link tailwind.css
