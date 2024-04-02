@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "tailwind", "inter-font", "data-turbo-track": "reload" %>
-    <!-- <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> -->
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body style="padding-top: 70px;">    
@@ -60,7 +60,7 @@
     </nav>
     <%= yield %>
     <%= javascript_importmap_tags %>
-    <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
+    <!-- <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %> -->
       <%= csrf_meta_tags %>
     </main>
   </body>
