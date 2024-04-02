@@ -76,7 +76,10 @@ module.exports = function(api) {
         {
           async: false
         }
-      ]
+      ],
+      ['@babel/plugin-transform-optional-chaining'],
+      ["@babel/plugin-transform-nullish-coalescing-operator"],
+      ["@babel/plugin-transform-logical-assignment-operators"]
     ].filter(Boolean)
   }
 }
