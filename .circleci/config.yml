@@ -32,9 +32,6 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
-      - node/install:
-        install-yarn: true
-        node-version: 14
       - run:
           name: Force Bundler Version
           command: |
