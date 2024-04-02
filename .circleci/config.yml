@@ -44,7 +44,7 @@ jobs:
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
 
 workflows:
-version: 2
+  version: 2
   say-hello-workflow: 
     jobs:
       - build-and-test # This is the job name from the `jobs` section above.
