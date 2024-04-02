@@ -37,8 +37,7 @@ jobs:
       - run: bundle install
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run: bin/rails db:{create,migrate} --trace
-      - run:
-        name: bundle exec rspec
+      - run: bundle exec rspec
       - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: test_results
 # Orchestrate jobs using workflows
