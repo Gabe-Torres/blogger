@@ -32,6 +32,9 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
       - run: echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
       - run: source $BASH_ENV && gem install bundler
       - run: bundle install
