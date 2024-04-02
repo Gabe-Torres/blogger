@@ -32,24 +32,13 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
+      - run: echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+      - run: source $BASH_ENV && gem install bundler
+      - run: bundle install
+      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run: bin/rails db:{create,migrate} --trace
       - run:
-          name: Force Bundler Version
-          command: |
-            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
-            source $BASH_ENV
-            gem install bundler
-      - run: 
-        name: Bundle Install
-        command: bundle install
-      - run:
-        name: Wait for DB
-        command: dockerize -wait tcp://localhost:5432 -timeout 1m
-      - run:
-        name: Setup Database
-        command: bin/rails db:{create,migrate} --trace
-      - run:
-        name: Run Tests
-        command: bundle exec rspec
+        name: bundle exec rspec
       - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: test_results
 # Orchestrate jobs using workflows
