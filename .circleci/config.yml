@@ -47,8 +47,7 @@ jobs:
           path: test_results
       - run:
           name: Precompile Assets
-          command: |
-            bundle exec rails assets:precompile
+          command: bundle exec rake assets:precompile
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
 

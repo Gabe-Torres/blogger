@@ -9,3 +9,4 @@
 //= link controllers/slide_over_controller.js
 //= link bootstrap.js
 //= link @popperjs--core.js
+//= link application.css
