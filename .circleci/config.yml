@@ -15,7 +15,7 @@ jobs:
     docker:
       # Specify the version you desire here
       # See: https://circleci.com/developer/images/image/cimg/base
-      - image: circleci/ruby:3.2.2-node-browsers
+      - image: cimg/ruby:3.2.2
         environment:
           NODE_ENV: test 
           BUNDLE_JOBS: 3
@@ -51,7 +51,7 @@ jobs:
           command: bundle exec rake assets:precompile
   yarn_install:
     docker:
-      - image: circleci/node:16.13
+      - image: circleci/ruby:3.2.2-node-browsers
     steps:
       - checkout
       - restore_cache:
