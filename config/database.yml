@@ -83,4 +83,5 @@ production:
   <<: *default
   database: blogger_production
   username: blogger
+  url: <%= ENV["DATABASE_URL"] %>
   password: <%= ENV["BLOGGER_DATABASE_PASSWORD"] %>
