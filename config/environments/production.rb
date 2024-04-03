@@ -1,6 +1,8 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.action_mailer.default_url_options = { host: 'https://thawing-citadel-30877-e399d2943313.herokuapp.com/' }
+
   config.assets.css_compressor = nil
 
   # Settings specified here will take precedence over those in config/application.rb.
