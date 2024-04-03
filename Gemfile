@@ -72,7 +72,6 @@ group :development do
 end
 
 
-gem "webpacker", "~> 5.4"
 
 gem "devise", "~> 4.9"
 

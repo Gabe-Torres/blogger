@@ -6,7 +6,7 @@
 // import "bootstrap"
 // import "@hotwired/turbo-rails"
 // import "./controllers/index"
-import "@popperjs/core";
+// import "@popperjs/core";
 // import "/stylesheets/application"
 
 import "bootstrap/dist/js/bootstrap.bundle";
