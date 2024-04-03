@@ -83,11 +83,11 @@ workflows:
           force: true
           requires:
             - build-and-test
-            - post-steps:
-                - run: 
-                    name: migrate 
-                    command: heroku run -a $HEROKU_APP_NAME rake db:migrate
-              filters:
-                branches:
-                  only:
-                    - main
+          post-steps:
+              - run: 
+                  name: migrate 
+                  command: heroku run -a $HEROKU_APP_NAME rake db:migrate
+          filters:
+            branches:
+              only:
+                - main
