@@ -1,9 +1,8 @@
 <div align="center">
-    <img src="" alt="blogger">
+    <img src="https://github.com/Gabe-Torres/blogger/assets/127896538/30051cda-9337-4d42-86b0-fe8928560a42" alt="blogger">
 </div>
 
-![pull request](https://img.shields.io/github/issues-pr/blogger)
-![pull request closed](https://img.shields.io/github/issues-pr-closed/blogger)
+![pull request](https://img.shields.io/github/issues-pr/gabe-torres/blogger)
 [![website down](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://thawing-citadel-30877-e399d2943313.herokuapp.com/users/sign_in)
 
 ![Made with Ruby on Rails](https://img.shields.io/badge/Made%20with-Ruby%20on%20Rails-%23990000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
@@ -39,6 +38,7 @@ Technologies used:<br>
 ### 
 
 - Gabe Torres [![GitHub](https://img.shields.io/badge/-GitHub-grey?style=flat&logo=github&logoColor=white)](https://github.com/Gabe-Torres) [![LinkedIn](https://img.shields.io/badge/-blue?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabe-torres-74a515269/)<br><br>
+</details>
 
 
 
@@ -49,7 +49,6 @@ Technologies used:<br>
 - [Getting Started](#getting-started)
 - [Routes](#routes)
 - [Test Suite](#test-suite)
-- [Reflection](#reflection)
 
 
 ## Important Links
@@ -152,37 +151,49 @@ end
 
 **Gems**
 ```ruby
-gem "rails", "~> 7.0.8"
-gem "sprockets-rails"
-gem "pg", "~> 1.1"
-gem "puma", "~> 5.0"
-gem "importmap-rails"
-gem "turbo-rails"
-gem "tailwindcss-rails"
-gem "stimulus-rails" 
-gem "jbuilder"
-gem 'hotwire-rails'
-gem "bcrypt", "~> 3.1.7"
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
-gem "bootsnap", require: false
+gem "rails", "~> 7.0.8", ">= 7.0.8.1"
 
+gem "pg", "~> 1.1"
+
+gem "puma", "~> 5.0"
+
+gem "importmap-rails"
+
+gem "turbo-rails"
+
+gem "stimulus-rails"
+
+gem "jbuilder"
+
+gem "tailwindcss-rails"
+
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+
+gem "bootsnap", require: false
+gem "bootstrap"
+
+gem "image_processing", "~> 1.2"
+gem "hotwire-rails"
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'launchy'
-  gem 'shoulda-matchers'
-  gem 'pry'
-  gem 'active_designer'
-  gem 'factory_bot'
-  gem 'simplecov', require: false, group: :test
+  gem "rspec-rails"
+  gem "capybara"
+  gem "launchy"
+  gem "shoulda-matchers"
+  gem "pry"
+  gem "active_designer"
 end
 
 group :development do
   gem "web-console"
+  gem "spring"
 end
 
 gem "devise", "~> 4.9"
+
+gem "cssbundling-rails", "~> 1.4"
+
+gem "jsbundling-rails", "~> 1.3"
 ```
 
 **Installing**
