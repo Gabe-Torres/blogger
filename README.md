@@ -29,7 +29,7 @@ Technologies used:<br>
 
 </div>
 
-<p>Blogger is a Ruby on Rails monolith application rebooted from an archived Turing School of Software and Design project walkthrough. It was made years ago around Ruby on Rails 3 & 5.  I decided to see the changes I could make while leveraging the features of Rails 7, experiment with different CSS frameworks, and the authorization gem Devise It is a sandbox/playground application for me to try things out. 
+<p>Watsup. is a Ruby on Rails monolith application rebooted from an archived Turing School of Software and Design project walkthrough. It was made years ago around Ruby on Rails 3 & 5.  I decided to see the changes I could make while leveraging the features of Rails 7, experiment with different CSS frameworks, and the authorization gem Devise. It is a sandbox/playground application for me to try things out and have some fun with. 
 </p>
 
 <details>
