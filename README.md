@@ -2,17 +2,16 @@
     <img src="" alt="blogger">
 </div>
 
-![pull request](https://img.shields.io/github/issues-pr/Campaign-Planner-Pro/Campaign-Planner-Pro.svg)
-![pull request closed](https://img.shields.io/github/issues-pr-closed/Campaign-Planner-Pro/Campaign-Planner-Pro.svg)
-[![website down](https://img.shields.io/badge/website-down-red)](http://campaignplanner.pro)
-<!-- [![website down](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](http://campaignplanner.pro) -->
+![pull request](https://img.shields.io/github/issues-pr/blogger)
+![pull request closed](https://img.shields.io/github/issues-pr-closed/blogger)
+[![website down](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://thawing-citadel-30877-e399d2943313.herokuapp.com/users/sign_in)
 
 ![Made with Ruby on Rails](https://img.shields.io/badge/Made%20with-Ruby%20on%20Rails-%23990000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
-![Made with Ruby](https://img.shields.io/badge/Made%20with-Ruby-%23990000?style=for-the-badge&logo=ruby&logoColor=white)
 
 
 Technologies used:<br>
 <div>
+  <img src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white"/>
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
   <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" />
   <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
