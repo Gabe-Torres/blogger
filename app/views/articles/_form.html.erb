@@ -1,35 +1,35 @@
 <%= form_with(model: article) do |form| %>
-  <% if article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+    <% if article.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
 
-      <ul>
-        <% article.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
+        <ul>
+          <% article.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <fieldset>
+      <%= form.label :title %>
+      <%= form.text_field :title, data: {controller: "focus", focus_focus_value: "now"} %>
+    </fieldset>
+
+    <fieldset>
+      <%= form.label :body %>
+      <%= form.text_area :body, rows: 4 %>
+    </fieldset>
+
+    <fieldset>
+      <%= form.label :tag_list %><br />
+      <%= form.text_field :tag_list %>
+    </fieldset>
+
+    <fieldset>
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true %>
+    </fieldset>
+
+    <%= form.submit class: 'btn btn-outline-success', data: {turbo_frame: "_top"} %>
   <% end %>
-
-  <fieldset>
-    <%= form.label :title %>
-    <%= form.text_field :title, data: {controller: "focus", focus_focus_value: "now"} %>
-  </fieldset>
-
-  <fieldset>
-    <%= form.label :body %>
-    <%= form.text_area :body, rows: 4 %>
-  </fieldset>
-
-  <fieldset>
-    <%= form.label :tag_list %><br />
-    <%= form.text_field :tag_list %>
-  </fieldset>
-
-  <fieldset>
-  <%= form.label :images %>
-  <%= form.file_field :images, multiple: true %>
-  </fieldset>
-
-  <%= form.submit class: 'btn btn-outline-success', data: {turbo_frame: "_top"} %>
-<% end %>

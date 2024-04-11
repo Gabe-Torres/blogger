@@ -20,10 +20,16 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user_id = current_user.id
-    @article.save
-    flash.notice = 'Article created!'
-
-    redirect_to article_path(@article)
+    respond_to do |format|
+      if @article.save
+        format.html { redirect_to article_path(@article), notice: 'Article was successfully created.' }
+        format.turbo_stream
+        format.json { render :show, status: :created, location: @article }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
