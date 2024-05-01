@@ -33,10 +33,11 @@ jobs:
     # See: https://circleci.com/docs/jobs-steps/#steps-overview & https://circleci.com/docs/configuration-reference/#steps
     steps:
       # Checkout the code as the first step.
+      # This is the version of Node.js to use
       - checkout
       - node/install:
           install-yarn: true
-          node-version: '18'
+          node-version: '18' 
       - run: echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
       - run: source $BASH_ENV && gem install bundler
       - run: bundle install
