@@ -20,14 +20,11 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user_id = current_user.id
+
     if @article.save
-      flash.notice = 'Article created!'
-      redirect_to article_path(@article)
+      redirect_to article_path(@article), notice: 'Article created!'
     else
-      respond_to do |format|
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-      end
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -52,7 +49,7 @@ class ArticlesController < ApplicationController
   private
 
   def set_article
-    @article = Article.find(params[:id])
+    @article = Article.find_by(id: params[:id])
   end
 
   def article_params
