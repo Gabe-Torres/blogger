@@ -5,7 +5,6 @@
 
       <div class="backdrop animate-fade-in"></div>
 
-      <section>
       <div class="absolute inset-0 overflow-hidden">
         <div class="fixed inset-y-0 right-0 flex max-w-full pl-10 pointer-events-none">
           <div class="w-screen max-w-md pointer-events-auto" style="z-index: 1050;" data-slide-over-target="slideOver" data-remove-target="element">
@@ -26,7 +25,9 @@
               </div>
 
               <section>
+                <%= turbo_frame_tag dom_id(@article) do %>
                 <%= render "form", article: @article %>
+                <% end %>
               </section>
             </div>
           </div>
