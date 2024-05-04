@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WutzUP?</title>
+    <title>watsup</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,22 +9,27 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body style="padding-top: 70px;">    
+  <body style="padding-top: 100px;">    
   <% if notice.present? %>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       <p class="mb-0"><%= notice %></p>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     <% end %>
+
     <nav class="navbar navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">WutzUP?</a>
+        <a class="navbar-brand" href="<%= root_path %>" style="overflow: hidden; height: 60px;">
+          <%= image_tag 'watsup.svg', alt: 'watsup', width: "200", height: "200", class: "d-inline-block align-text-top", style: "position: relative; top: -80px;" %>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">WutzUP?</h5>
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+              <%= image_tag 'watsup.png', alt: 'watsup', width: "200", height: "200", class: "d-inline-block align-text-top" %>
+            </h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
