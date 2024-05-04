@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WutzUP?</title>
+    <title>watsup</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,22 +9,27 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body style="padding-top: 70px;">    
+  <body style="padding-top: 100px;">    
   <% if notice.present? %>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       <p class="mb-0"><%= notice %></p>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     <% end %>
+
     <nav class="navbar navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">WutzUP?</a>
+        <a class="navbar-brand" href="<%= root_path %>" style="overflow: hidden; height: 60px;">
+          <%= image_tag 'watsup.svg', alt: 'watsup', width: "200", height: "200", class: "d-inline-block align-text-top", style: "position: relative; top: -80px;" %>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">WutzUP?</h5>
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+              <%= image_tag 'watsup.png', alt: 'watsup', width: "200", height: "200", class: "d-inline-block align-text-top" %>
+            </h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
@@ -33,19 +38,29 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">All Articles</a>
+                <a class="nav-link" href="<%= articles_path %>">All Articles</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+                  Articles by Month
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Jan</a></li>
+                  <li><a class="dropdown-item" href="#">Feb</a></li>
+                  <li><a class="dropdown-item" href="#">Mar</a></li>
+                  <li><a class="dropdown-item" href="#">Apr</a></li>
+                  <li><a class="dropdown-item" href="#">May</a></li>
+                  <li><a class="dropdown-item" href="#">Jun</a></li>
+                  <li><a class="dropdown-item" href="#">Jul</a></li>
+                  <li><a class="dropdown-item" href="#">Aug</a></li>
+                  <li><a class="dropdown-item" href="#">Sep</a></li>
+                  <li><a class="dropdown-item" href="#">Oct</a></li>
+                  <li><a class="dropdown-item" href="#">Nov</a></li>
+                  <li><a class="dropdown-item" href="#">Dec</a></li>
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Most Viewed</a></li>
                 </ul>
               </li>
               <%= button_to 'Sign out', destroy_user_session_path, class: "btn btn-outline-secondary", method: :delete %>
