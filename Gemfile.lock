@@ -89,8 +89,6 @@ GEM
       aws-eventstream (~> 1, >= 1.0.2)
     bcrypt (3.1.20)
     bindex (0.8.1)
-    bootsnap (1.18.3)
-      msgpack (~> 1.2)
     bootstrap (5.3.3)
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.8, < 3)
@@ -168,7 +166,6 @@ GEM
     mini_magick (4.12.0)
     mini_mime (1.1.5)
     minitest (5.22.3)
-    msgpack (1.7.2)
     net-imap (0.4.10)
       date
       net-protocol
@@ -264,7 +261,6 @@ GEM
       ffi (~> 1.12)
     shoulda-matchers (6.2.0)
       activesupport (>= 5.2.0)
-    spring (4.2.1)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -320,7 +316,6 @@ PLATFORMS
 DEPENDENCIES
   active_designer
   aws-sdk-s3
-  bootsnap
   bootstrap
   capybara
   cssbundling-rails (~> 1.4)
@@ -339,7 +334,6 @@ DEPENDENCIES
   rails (~> 7.0.8, >= 7.0.8.1)
   rspec-rails
   shoulda-matchers
-  spring
   sprockets-rails
   stimulus-rails
   tailwindcss-rails
