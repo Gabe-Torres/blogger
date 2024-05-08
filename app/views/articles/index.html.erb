@@ -5,23 +5,22 @@
     <%= link_to "New Article", new_article_path, class: "btn btn-outline-primary", data: {turbo_frame: "slide-over", dom_id:(Article.new) } %>
   </div>
 
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Title</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @articles.each do |article| %>
-          <tr>
-            <td>
-              <%= link_to article.title, article_path(article),
-              class: 'article-title', id: "article-#{article.id}" %>
-            </td>
-          </tr>
-        <% end %>
-    </tbody>
-  </table>
+  <div class="container-md">
+    <div class="row">
+    <% @articles.each do |article| %>
+      <div class="col-md-3">
+        <div class="card">
+          <%= image_tag(article.images.attached? && article.images.any? ? article.images.first.variant(resize_to_limit: [300, 300]) : asset_path("blogger.png"), class: "card-img-top") %>
+          <div class="card-body">
+            <%= link_to article.title, article_path(article),
+            class: 'article-title', id: "article-#{article.id}" %>
+            <p class="article-user"><%= article.user.email %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 
   <div class="flex items-center justify-between">
     <%= link_to "All Tags", tags_path, class: "btn btn-outline-info" %>
