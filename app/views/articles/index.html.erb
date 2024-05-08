@@ -15,6 +15,13 @@
             <%= link_to article.title, article_path(article),
             class: 'article-title', id: "article-#{article.id}" %>
             <p class="article-user"><%= article.user.email %></p>
+            <p class="article-tags">
+              <% if article.tags.any? %>
+                <%= article.tag_list %>
+            <% else %>
+              No tags
+            <% end %>
+            </p>
           </div>
         </div>
       </div>
