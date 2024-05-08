@@ -14,7 +14,7 @@
           <%= image_tag(article.images.attached? && article.images.any? ? article.images.first.variant(resize_to_limit: [300, 300]) : asset_path("blogger.png"), class: "card-img-top") %>
           <div class="card-body">
             <h5 class="card-title"><%= article.title %></h5>
-            <p class="article-user"><%= article.user.email %></p>
+            <p class="article-user">USER: <%= article.user.email %></p>
             <a href="<%= article_path(article)%>" class="btn btn-primary">Read this FIRE Post</a>
             <p class="article-tags">
               <% if article.tags.any? %>
