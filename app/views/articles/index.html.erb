@@ -10,7 +10,7 @@
     <% @articles.each do |article| %>
       <div class="col-md-3">
         <div class="card" style="width: 18rem;">
-        <img src="assets/fire.jpeg" class="card-img-top" alt="fire">
+        <%= image_tag(asset_path("fire.jpeg"), class: "card-img-top", alt: "fire") %>
           <%= image_tag(article.images.attached? && article.images.any? ? article.images.first.variant(resize_to_limit: [300, 300]) : asset_path("blogger.png"), class: "card-img-top") %>
           <div class="card-body">
             <h5 class="card-title"><%= article.title %></h5>
