@@ -15,7 +15,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= article.title %></h5>
             <p class="article-user">USER: <%= article.user.email %></p>
-            <a href="<%= article_path(article)%>" class="btn btn-primary">Read this FIRE Post</a>
+            <a href="<%= article_path(article)%>" class="btn btn-primary">Read This FIRE Article</a>
             <p class="article-tags">
               <% if article.tags.any? %>
                 <small class="text-muted"> <%= article.tag_list %> </small>

@@ -12,8 +12,6 @@ RSpec.describe 'user sees all article', type: :feature do
 
       expect(page).to have_content(article_1.title)
       expect(page).to have_content(article_2.title)
-      # changed the links and added a button to article. need to update the test to reflect the changes
-
       expect(page).to have_link('New Article')
     end
   end
