@@ -1,11 +1,20 @@
-<h1><%= @article.title %></h1>
+<h1 class="card-title"><%= @article.title %></h1>
+<h3 class="card-subtitle mb-2 text-muted">
 <p>
   Tags:
   <% @article.tags.each do |tag| %>
     <%= link_to tag.name, tag_path(tag) %>
     <% end %>
 </p>
-<p><%= @article.body %></p>
+</h3>
+<div class="card" style="width: 100rem;">
+  <div class="card-body">
+    <h5 class="card-title">Author: <%= @article.user.email %></h5>
+    <p class="card-text">Created: <%= @article.created_at.strftime("%B %d, %Y") %></p>
+    <p class="card-text">Updated: <%= @article.updated_at.strftime("%B %d, %Y") %></p>
+    <p class="card-text"><%= @article.body %></p>
+  </div>
+</div>
 
 <h3>Images</h3>
 <% @article.images.each do |image| %>

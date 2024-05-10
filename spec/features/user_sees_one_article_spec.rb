@@ -11,7 +11,7 @@ RSpec.describe "user sees one article", type: :feature do
 
       visit articles_path
 
-      click_on("Read this FIRE Post")
+      click_on("Read This FIRE Article")
 
       expect(page).to have_content(article.title)
       expect(page).to have_content(article.body)
