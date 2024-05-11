@@ -22,6 +22,7 @@
         <a class="navbar-brand" href="<%= root_path %>" style="overflow: hidden; height: 60px;">
           <%= image_tag 'watsup.svg', alt: 'watsup', width: "200", height: "200", class: "d-inline-block align-text-top", style: "position: relative; top: -80px;" %>
         </a>
+        <p class="text-white"><%= current_user.signed_in? %></p>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>

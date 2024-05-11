@@ -7,4 +7,7 @@ class ApplicationController < ActionController::Base
   # def index
   #   @show_mobile_menu = true
   # end
+  def current_user
+    super || Guest.new
+  end
 end
