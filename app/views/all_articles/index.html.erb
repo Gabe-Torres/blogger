@@ -1,0 +1,27 @@
+
+  <div class="container-md">
+    <div class="row gy-5">    
+    <% @articles.each do |article| %>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+        <%= image_tag(asset_path("fire.jpeg"), class: "card-img-top", alt: "fire") %>
+          <%= image_tag(article.images.attached? && article.images.any? ? article.images.first.variant(resize_to_limit: [300, 300]) : asset_path("blogger.png"), class: "card-img-top") %>
+          <div class="card-body">
+            <h5 class="card-title"><%= article.title %></h5>
+            <p class="article-user">USER: <%= article.user.email %></p>
+            <a href="<%= article_path(article)%>" class="btn btn-primary">Read This FIRE Article</a>
+            <p class="article-tags">
+              <% if article.tags.any? %>
+                <small class="text-muted"> <%= article.tag_list %> </small>
+            <% else %>
+            <small class="text-muted">
+              No tags
+            </small>
+            <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
