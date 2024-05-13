@@ -1,3 +1,7 @@
+<div class="w-full">
+  <div class="flex items-center justify-between">
+    <h1 class="text-4xl font-bold">All Articles</h1>
+  </div>
 
   <div class="container-md">
     <div class="row gy-5">    
@@ -24,4 +28,9 @@
       </div>
       <% end %>
     </div>
+  </div>
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <%= link_to "<< My Articles List",articles_path, class: "btn btn-outline-primary" %>
+    <%= link_to "<< All Tags List", tags_path, class: "btn btn-outline-primary" %>
   </div>
