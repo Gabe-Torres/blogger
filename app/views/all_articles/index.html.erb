@@ -1,8 +1,6 @@
-
 <div class="w-full">
   <div class="flex items-center justify-between">
-    <h1 class="text-4xl font-bold">My Articles</h1>
-    <%= link_to "New Article", new_article_path, class: "btn btn-outline-primary", data: {turbo_frame: "slide-over", dom_id:(Article.new) } %>
+    <h1 class="text-4xl font-bold">All Articles</h1>
   </div>
 
   <div class="container-md">
@@ -32,9 +30,7 @@
     </div>
   </div>
 
-  <div class="flex items-center justify-between">
-    <%= link_to "All Tags", tags_path, class: "btn btn-outline-info" %>
-    <%= link_to "All Articles List", all_articles_path, class: "btn btn-outline-primary" %>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <%= link_to "<< My Articles List",articles_path, class: "btn btn-outline-primary" %>
+    <%= link_to "<< All Tags List", tags_path, class: "btn btn-outline-primary" %>
   </div>
-
-<%= turbo_frame_tag "slide-over" %>

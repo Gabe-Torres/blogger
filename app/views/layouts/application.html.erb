@@ -35,10 +35,10 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="<%= articles_path %>">My Articles</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="<%= articles_path %>">All Articles</a>
+                <a class="nav-link" href="<%= all_articles_path %>">All Articles</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link disabled" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,7 +63,9 @@
                   <li><a class="dropdown-item" href="#">Most Viewed</a></li>
                 </ul>
               </li>
-              <%= button_to 'Sign out', destroy_user_session_path, class: "btn btn-outline-secondary", method: :delete %>
+              <% if user_signed_in? %>
+                <%= button_to 'Sign out', destroy_user_session_path, class: "btn btn-outline-secondary", method: :delete %>
+              <% end %>
             </ul>
             <form class="d-flex mt-3" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

@@ -21,4 +21,8 @@ class Article < ApplicationRecord
     new_or_found_tags = tag_name.collect { |name| Tag.find_or_create_by(name: name) }
     self.tags = new_or_found_tags
   end
+
+  def self.all_with_users
+    includes(:user).order(created_at: :desc).all
+  end
 end

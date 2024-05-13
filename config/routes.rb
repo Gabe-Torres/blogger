@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+  resources :all_articles, only: [:index]
   resources :tags
 end

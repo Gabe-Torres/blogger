@@ -31,9 +31,14 @@
 <%= render partial: 'articles/comment', collection: @article.comments.reverse %>
 <%= render partial: 'comments/form' %>
 
-<%= link_to "Delete", article_path(@article), method: :delete, class: "btn btn-outline-danger", data: { "turbo-method": :delete, turbo_confirm: "Are you sure you want to delete #{@article.title}"} %>
-<%= link_to "Edit", edit_article_path(@article), method: :get, class: "btn btn-outline-info", data: { "turbo-frame": "slide-over" } %>
+<% if user_signed_in? && current_user.id == @article.user_id %> 
+  <%= link_to "Delete", article_path(@article), method: :delete, class: "btn btn-outline-danger", data: { "turbo-method": :delete, turbo_confirm: "Are you sure you want to delete #{@article.title}"} %>
+  <%= link_to "Edit", edit_article_path(@article), method: :get, class: "btn btn-outline-info", data: { "turbo-frame": "slide-over" } %>
+<% end %>
+
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <%= link_to "<< Back to Articles List",articles_path, class: "btn btn-outline-primary" %>
+  <%= link_to "<< My Articles List",articles_path, class: "btn btn-outline-primary" %>
+  <%= link_to "<< All Articles List", all_articles_path, class: "btn btn-outline-primary" %>
+  <%= link_to "<< All Tags List", tags_path, class: "btn btn-outline-primary" %>
 </div>
 <%= turbo_frame_tag "slide-over" %>
