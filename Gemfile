@@ -60,6 +60,10 @@ group :development, :test do
   gem "shoulda-matchers"
   gem "pry"
   gem "active_designer"
+  gem "simplecov"
+  gem "orderly"
+  gem "faker"
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -80,3 +84,4 @@ gem "cssbundling-rails", "~> 1.4"
 gem "jsbundling-rails", "~> 1.3"
 
 gem "aws-sdk-s3", require: false
+gem "factory_bot", "~> 6.4"
