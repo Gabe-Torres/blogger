@@ -84,3 +84,4 @@ gem "cssbundling-rails", "~> 1.4"
 gem "jsbundling-rails", "~> 1.3"
 
 gem "aws-sdk-s3", require: false
+gem "factory_bot", "~> 6.4"
