@@ -1,11 +1,29 @@
-<h1>Articles Tagged With <%= @tag.name %></h1>
+
+<div class="flex items-center justify-between">
+    <h1 class="text-4xl font-bold">Articles Tagged With <%= @tag.name %></h1>
+  </div>
 <ul>
+<div class="container-md">
+  <table class='table table-striped table-info'>
+    <thead>
+      <tr>
+        <th scope ="col">articles</th>
+      </tr>
+  </thead>
+  <tbody>
+  <div id="tags" class="min-w-full">
   <% @tag.articles.each do |article| %>
+    <tr>
+      <td>
     <li><%= link_to article.title, article_path(article) %></li>
     <% if user_signed_in? && current_user.id == article.user_id %>
     <%= link_to "Delete", tag_path(@tag), method: :delete, class: "btn btn-primary", data: { "turbo-method": :delete, turbo_confirm: "Are you sure you want to delete #{@tag.name}"} %>
     <% end %>
+      </td>
+    </tr>
   <% end %>
+  </tbody>
+  </table>
 </ul>
     <%= link_to "<< Back to previous page", request.referer, class: "btn btn-primary" %>
 
