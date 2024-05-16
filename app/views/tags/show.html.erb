@@ -2,10 +2,10 @@
 <ul>
   <% @tag.articles.each do |article| %>
     <li><%= link_to article.title, article_path(article) %></li>
-    <%= link_to "<< Back to Article", article_path(article), class: "btn btn-primary" %>
     <% if user_signed_in? && current_user.id == article.user_id %>
     <%= link_to "Delete", tag_path(@tag), method: :delete, class: "btn btn-primary", data: { "turbo-method": :delete, turbo_confirm: "Are you sure you want to delete #{@tag.name}"} %>
     <% end %>
   <% end %>
 </ul>
+    <%= link_to "<< Back to previous page", request.referer, class: "btn btn-primary" %>
 
