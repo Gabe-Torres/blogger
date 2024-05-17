@@ -6,6 +6,7 @@
   <div class="card" style="width: 100rem;">
     <div class="card-body">
       <h5 class="card-title"><%= link_to article.title, article_path(article) %> </h5>
+      <h3 class="card-subtitle mb-2 text-muted">Author: <%= article.user.email %></h3>
       <p class="card-text">Created: <%= article.created_at.strftime("%B %d, %Y") %></p>
       <p class="card-text">Updated: <%= article.updated_at.strftime("%B %d, %Y") %></p>
       <% if user_signed_in? && current_user.id == article.user_id %>
