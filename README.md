@@ -214,6 +214,8 @@ gem "factory_bot", "~> 6.4"
 
 ## Endpoints
 
+<details>
+    
 | Action | Route |
 | ----------- | ----------- |
 | "GET" | '/users/sign_in/:id' |
@@ -237,6 +239,10 @@ gem "factory_bot", "~> 6.4"
 | "PATCH" | '/tags/:id' |
 | "DELTE" | '/tags/:id' |
 | "PUT" | '/tags/:id' |
+
+</details>
+
+
 ## Test Suite
  - run `bundle exec rspec` to run the test suite
 
