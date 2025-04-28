@@ -47,12 +47,12 @@ Technologies used:<br>
 ## Summary 
 - [Important Links](#important-links)
 - [Getting Started](#getting-started)
-- [Routes](#routes)
+- [Endpoints](#endpoints)
 - [Test Suite](#test-suite)
 
 
 ## Important Links
-- [Back-End production site](https://thawing-citadel-30877-e399d2943313.herokuapp.com/users/sign_in)
+- [Production site](https://thawing-citadel-30877-e399d2943313.herokuapp.com/users/sign_in)
 
 
 ## Getting Started
@@ -174,6 +174,8 @@ gem "bootstrap"
 
 gem "image_processing", "~> 1.2"
 gem "hotwire-rails"
+gem "figaro"
+
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rspec-rails"
@@ -182,6 +184,10 @@ group :development, :test do
   gem "shoulda-matchers"
   gem "pry"
   gem "active_designer"
+  gem "simplecov"
+  gem "orderly"
+  gem "faker"
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -194,6 +200,8 @@ gem "devise", "~> 4.9"
 gem "cssbundling-rails", "~> 1.4"
 
 gem "jsbundling-rails", "~> 1.3"
+gem "aws-sdk-s3", require: false
+gem "factory_bot", "~> 6.4"
 ```
 
 **Installing**
@@ -204,21 +212,31 @@ gem "jsbundling-rails", "~> 1.3"
   - Open your browser and navigate to `localhost:3000`
 </details>
 
-## Routes
+## Endpoints
 
 | Action | Route |
 | ----------- | ----------- |
-|  | '/' |
-|  | '/' |
-|  | '/' |
-|  | '/' |
-|  | '/' |
-|  | '/' |
-|  | '/' |
-|  | '/' |
-|  | '/' |
-
-
+| "GET" | '/users/sign_in/:id' |
+| "POST" | '/users/sign_in/:id' |
+| "DELETE" | '/users/sign_out/:id' |
+| "GET" | '/users/sign_up' |
+| "GET" | '/articles/:id' |
+| "POST" | '/articles/:id' |
+| "GET" | '/articles/new/;id' |
+| "GET" | '/articles/:id/edit' |
+| "PATCH" | '/articles/:id/edit' |
+| "PUT" | '/articles/:id' |
+| "GET" | '/articles/:article_id/comments' |
+| "POST" | '/articles/:article_id/comments' |
+| "PUT" | '/articles/:article_id/comments' |
+| "PATCH" | '/articles/:article_id/comments' |
+| "DELETE" | '/articles/:article_id/comments' |
+| "GET" | '/tags' |
+| "POST" | '/tags' |
+| "GET" | '/tags/new' |
+| "PATCH" | '/tags/:id' |
+| "DELTE" | '/tags/:id' |
+| "PUT" | '/tags/:id' |
 ## Test Suite
  - run `bundle exec rspec` to run the test suite
 
@@ -261,6 +279,40 @@ end
 <summary>Sad Path</summary>
 
 ```ruby
+describe "Sad Path, Error 422" do
+    scenario 'creates a new article with invalid entries' do
+        user = User.create!(:email => 'test@example.com', :password => 'f4k3p455w0rd')
+        login_as(user, :scope => :user)
+        
+        visit articles_path
+        
+        click_link 'New Article'
+        
+        expect(current_path).to eq(new_article_path)
+        
+        fill_in 'Title', with: 'new title'
+        fill_in 'Body', with: ''
+        fill_in "article[tag_list]", with: "ruby technology"
+        
+        click_on 'Create Article'
+        expect(page).to have_content("Body can't be blank")
+        
+        fill_in 'Title', with: ''
+        fill_in 'Body', with: 'new title'
+        fill_in "article[tag_list]", with: "ruby technology"
+        
+        click_on 'Create Article'
+        expect(page).to have_content("Title can't be blank")
+        
+        fill_in 'Title', with: ''
+        fill_in 'Body', with: ''
+        fill_in "article[tag_list]", with: "ruby technology"
+        
+        click_on 'Create Article'
+        expect(page).to have_content("Title can't be blank")
+        expect(page).to have_content("Body can't be blank")
+        end
+    end
 ```
 
 </details>
