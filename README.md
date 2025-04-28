@@ -29,7 +29,22 @@ Technologies used:<br>
 
 </div>
 
-<p>Watsup. is a Ruby on Rails monolith application rebooted from an archived Turing School of Software and Design project walkthrough. It was made years ago around Ruby on Rails 3 & 5.  I decided to see the changes I could make while leveraging the features of Rails 7, experiment with different CSS frameworks, and the authorization gem Devise. It is a sandbox/playground application for me to try things out and have some fun with. 
+<p>Watsup. is a Ruby on Rails monolith application rebooted from an archived Turing School of Software and Design project walkthrough. It was made years ago around Ruby on Rails 3 & 5.  I decided to see the changes I could make while leveraging the features of Rails 7, experiment with different CSS frameworks, and the authorization gem Devise. It is a sandbox/playground application for me to try things out and have some fun with. </p>
+
+
+### Features
+<p>
+
+
+User Accounts: Users can sign up and manage accounts using Devise for secure authentication.
+
+Article Creation & Sharing: Write, publish, and share articles visible on a public article index.
+
+Tagging: Add relevant tags to articles for better categorization and discoverability.
+
+Comments: Engage with the community by commenting on articles.
+
+Image Uploads: Attach images to articles, stored securely using AWS.
 </p>
 
 <details>
@@ -214,7 +229,7 @@ gem "factory_bot", "~> 6.4"
 
 ## Endpoints
 
-<details>
+<details> 
     
 | Action | Route |
 | ----------- | ----------- |
